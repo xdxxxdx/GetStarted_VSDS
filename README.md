@@ -22,47 +22,47 @@
  1.  Create a local [docker-compose.yml](https://stackedit.io/docker-compose.yml) file with the following content:
 ```
    version: '3.3'
-	services:
-	  ldes-server:
-	    container_name: quick-start_ldes-server
-	    image: ghcr.io/informatievlaanderen/ldes-server:latest
-	    environment:
-	      - SIS_DATA=/tmp
-	      - SPRING_DATA_MONGODB_DATABASE=sample
-	      - LDES_COLLECTIONNAME=sample
-	      - LDES_MEMBERTYPE=https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection
-	      - SPRING_DATA_MONGODB_HOST=ldes-mongodb
-	      - SPRING_DATA_MONGODB_PORT=27017
-	      - LDES_HOSTNAME=http://localhost:8080
-	      - LDES_SHAPE=
-	      - VIEW_TIMESTAMPPATH=http://www.w3.org/ns/prov#generatedAtTime
-	      - VIEW_VERSIONOFPATH=http://purl.org/dc/terms/isVersionOf
-	      - VIEWS_0_FRAGMENTATIONS_0_NAME=timebased
-	      - VIEWS_0_NAME=by-time
-	      - VIEWS_0_FRAGMENTATIONS_0_CONFIG_MEMBERLIMIT=1
-	    ports:
-	      - 8080:8080
-	    networks:
-	      - ldes
-	    depends_on:
-	      - ldes-mongodb
-	  ldes-mongodb:
-	    container_name: quick-start_ldes-mongodb
-	    image: mongo:6.0.4
-	    ports:
-	      - 27017:27017
-	    networks:
-	      - ldes
-	  ldes-cli:
-	    image: ghcr.io/informatievlaanderen/ldes-cli:20230222T0959
-	    container_name: quick-start_ldes-client-cli
-	    command: "--url http://localhost:8080/sample/by-time --input-format text/turtle"
-	    profiles:
-	      - delayed-started
-	    network_mode: service:ldes-server
-	networks:
-	  ldes:
-	    name: quick_start_network
+services:
+  ldes-server:
+    container_name: quick-start_ldes-server
+    image: ghcr.io/informatievlaanderen/ldes-server:latest
+    environment:
+      - SIS_DATA=/tmp
+      - SPRING_DATA_MONGODB_DATABASE=sample
+      - LDES_COLLECTIONNAME=sample
+      - LDES_MEMBERTYPE=https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection
+      - SPRING_DATA_MONGODB_HOST=ldes-mongodb
+      - SPRING_DATA_MONGODB_PORT=27017
+      - LDES_HOSTNAME=http://localhost:8080
+      - LDES_SHAPE=
+      - VIEW_TIMESTAMPPATH=http://www.w3.org/ns/prov#generatedAtTime
+      - VIEW_VERSIONOFPATH=http://purl.org/dc/terms/isVersionOf
+      - VIEWS_0_FRAGMENTATIONS_0_NAME=pagination
+      - VIEWS_0_NAME=by-page
+      - VIEWS_0_FRAGMENTATIONS_0_CONFIG_MEMBERLIMIT=1
+    ports:
+      - 8080:8080
+    networks:
+      - ldes
+    depends_on:
+      - ldes-mongodb
+  ldes-mongodb:
+    container_name: quick-start_ldes-mongodb
+    image: mongo:6.0.4
+    ports:
+      - 27017:27017
+    networks:
+      - ldes
+  ldes-cli:
+    image: ghcr.io/informatievlaanderen/ldes-cli:20230222T0959
+    container_name: quick-start_ldes-client-cli
+    command: "--url http://localhost:8080/sample/by-page --input-format text/turtle"
+    profiles:
+      - delayed-started
+    network_mode: service:ldes-server
+networks:
+  ldes:
+    name: quick_start_network
 
 ```
  2. Under the same path of  [docker-compose.yml](./docker-compose.yml), please run ```docker compose up``` to start the [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) and [MongoDB](https://www.mongodb.com) containers.
