@@ -1,0 +1,48 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ns0: <http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeatureCollection.> .
+@prefix ns1: <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.> .
+@prefix ns2: <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.> .
+@prefix ns3: <https://schema.org/> .
+
+<urn:ngsi-ld:WaterQualityObserved:woq:1/2023-03-12T18:31:17.004Z>
+  dc:isVersionOf <urn:ngsi-ld:WaterQualityObserved:woq:1> ;
+  prov:generatedAtTime "2023-03-12T18:31:17.004Z"^^xsd:dateTime ;
+  sosa:hasFeatureOfInterest "spt-00035-79" ;
+  ns0:member <https://data.vmm.be/id/loc-00019-33>, [
+    sosa:madeBySensor <urn:ngsi-v2:cot-imec-be:Device:imec-iow-UR5gEycRuaafxnhvjd9jnU> ;
+    ns1:result [ ns2:value [
+        ns3:value 2.043000e+1 ;
+        ns3:unitCode <https://data.vmm.be/id/CEL>
+      ] ] ;
+    ns1:phenomenonTime "2023-03-12T18:31:17.004Z"^^xsd:datetime ;
+    ns1:observedProperty <https://data.vmm.be/concept/waterkwaliteitparameter/temperatuur> ;
+    ns1:featureOfInterest <https://data.vmm.be/id/spt-00035-79> ;
+    a <http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement>
+  ], [
+    sosa:madeBySensor <urn:ngsi-v2:cot-imec-be:Device:imec-iow-UR5gEycRuaafxnhvjd9jnU> ;
+    ns1:result [ ns2:value [
+        ns3:value 1442 ;
+        ns3:unitCode <https://data.vmm.be/id/HP>
+      ] ] ;
+    ns1:phenomenonTime "2023-03-12T18:31:17.003Z"^^xsd:datetime ;
+    ns1:observedProperty <https://data.vmm.be/concept/observatieparameter/hydrostatische-druk> ;
+    ns1:featureOfInterest <https://data.vmm.be/id/spt-00035-79> ;
+    a <http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement>
+  ], [
+    sosa:madeBySensor <urn:ngsi-v2:cot-imec-be:Device:imec-iow-UR5gEycRuaafxnhvjd9jnU> ;
+    ns1:result [ ns2:value [
+        ns3:value 6150 ;
+        ns3:unitCode <https://data.vmm.be/id/G42>
+      ] ] ;
+    ns1:phenomenonTime "2023-03-12T18:31:17.003Z"^^xsd:datetime ;
+    ns1:observedProperty <https://data.vmm.be/concept/waterkwaliteitparameter/conductiviteit> ;
+    ns1:featureOfInterest <https://data.vmm.be/id/spt-00035-79> ;
+    a <http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement>
+  ] ;
+  a <https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection> .
+
+<https://data.vmm.be/id/loc-00019-33> a <http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature> 
+
