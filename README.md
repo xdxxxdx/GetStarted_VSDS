@@ -21,7 +21,7 @@
 
  1.  Create a local [docker-compose.yml](https://stackedit.io/docker-compose.yml) file with the following content:
 ```
-   version: '3.3'
+version: '3.3'
 services:
   ldes-server:
     container_name: quick-start_ldes-server
