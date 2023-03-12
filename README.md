@@ -1,18 +1,25 @@
+# Getting Started with [Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space)
 
+>***Please Note !*** 
+>> *The quick start tryout is ONLY made for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)
+> for the self-generated data type:
+> [https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection](https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection).
+> To support other fragments, data types, or other features e.g. retention, caching, etc... Please consult [LDES Server Manual](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)  for the configurations.*
 
-# Getting Started with [VSDS](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space)
-A quick start manual for trying out VSDS project
+>> *[Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space) projects also provide methods for pre-processing data to LDES format.
+> e.g. From [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [NGSI-LD](https://en.wikipedia.org/wiki/NGSI-LD), from NGSI to [OSLO](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/oslo) Model, from  [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [LDES (LinkedDataEventStreams)](https://semiceu.github.io/LinkedDataEventStreams/) etc.. For more info, please consult: [VSDS Linked Data Interactions](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions)*
+
 
 ## Before Start
 
- 1. [Docker](https://docker.com) has been installed on your device.
- 2.  Local Ports 8080, 27017 are free.
- 3.  The command scripts is written in [bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) code, please modify it accordingly. :)
+1. [Docker](https://docker.com/) has been installed on your device.
+2.  Local Ports 8080, and 27017 are free.
+3.  The command script is written in [bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) code, please modify it accordingly. :)
 
 
 ## Start your [**LDES Server**](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) 
 
- 1. Create local [docker-compose.yml](./docker-compose.yml) file with following content:
+ 1.  Create a local [docker-compose.yml](https://stackedit.io/docker-compose.yml) file with the following content:
 ```
    version: '3.3'
 	services:
@@ -60,7 +67,7 @@ A quick start manual for trying out VSDS project
 ```
  2. Under the same path of  [docker-compose.yml](./docker-compose.yml), please run ```docker compose up``` to start the [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) and [MongoDB](https://www.mongodb.com) containers.
 
- 3. **Now!** LDES Server is running at port 8080 right and ready for making[Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination) for your data. Please. use your preferred browser to reach [http://localhost:8080/sample](http://localhost:8080/sample) to have a look.
+ 3. **Now!** LDES Server is running at port 8080 right and ready for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination) for your data. Please. use your preferred browser to reach [http://localhost:8080/sample](http://localhost:8080/sample) to have a look.
  
 *The result should be as follow:* 
 ```
@@ -80,7 +87,7 @@ sample:by-page  rdf:type  tree:Node .
 
  1. Please run ```curl -X POST http://localhost:8080/sample -H "Content-Type: application/ttl" -d '@sample.ttl```
  
- 2. **Now!** LDES Server has [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)  -ed your first sample.ttl data. Please use your preferred browser to reach [http://localhost:8080/sample](http://localhost:8080/sample) to have a look.
+ 2. **Now!** LDES Server has [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)  -ed your first [LDES](https://semiceu.github.io/LinkedDataEventStreams/) data [sample.ttl](./sample.ttl). Please use your preferred browser to reach [http://localhost:8080/sample](http://localhost:8080/sample) to have a look.
  
 *The result should be as follow:* 
 ```
@@ -99,15 +106,11 @@ sample:by-page  rdf:type  tree:Node ;
                        ] .
  ```       
 
-Follow the `tree:node`  [http://localhost:8080/sample/by-page?pageNumber=1](http://localhost:8080/sample/by-page?pageNumber=1),  you could reach the the first page of your data set.
-
-**Please Notice !** 
-*The quick start tryout is ONLY made for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination) for the self-generated data type: [https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection](https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection).
-For support other fragments, data type. Please consult :  [LDES Server Manual](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)  for the configurations.*
+Follow the `tree:node`  [http://localhost:8080/sample/by-page?pageNumber=1](http://localhost:8080/sample/by-page?pageNumber=1),  you could reach the first page of your data set.
 
 ## Synchronize your LDES dataset using [LDES Client](https://github.com/orgs/Informatievlaanderen/packages/container/package/ldes-cli)
 
- - Please run  -  ```docker compose up ldes-cli -d ```  o start [LDES 
+ - Please run ```docker compose up ldes-cli -d ```  to start [LDES 
    Client](https://github.com/orgs/Informatievlaanderen/packages/container/package/ldes-cli)
    docker container.
    
