@@ -10,15 +10,15 @@ services:
       - LDES_MEMBERTYPE=https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection
       - SPRING_DATA_MONGODB_HOST=ldes-mongodb
       - SPRING_DATA_MONGODB_PORT=27017
-      - LDES_HOSTNAME=http://localhost:${LDES_SERVER_PORT:-8080}
-      - LDES_SHAPE=${LDES_SHAPE:-}
+      - LDES_HOSTNAME=http://localhost:8080
+      - LDES_SHAPE=
       - VIEW_TIMESTAMPPATH=http://www.w3.org/ns/prov#generatedAtTime
       - VIEW_VERSIONOFPATH=http://purl.org/dc/terms/isVersionOf
-      - VIEWS_0_FRAGMENTATIONS_0_NAME=timebased
-      - VIEWS_0_NAME=${VIEW_NAME:-by-time}
-      - VIEWS_0_FRAGMENTATIONS_0_CONFIG_MEMBERLIMIT=${MEMBER_LIMIT:-2}
+      - VIEWS_0_FRAGMENTATIONS_0_NAME=pagination
+      - VIEWS_0_NAME=by-page
+      - VIEWS_0_FRAGMENTATIONS_0_CONFIG_MEMBERLIMIT=1
     ports:
-      - ${LDES_SERVER_PORT:-8080}:8080
+      - 8080:8080
     networks:
       - ldes
     depends_on:
@@ -33,7 +33,7 @@ services:
   ldes-cli:
     image: ghcr.io/informatievlaanderen/ldes-cli:20230222T0959
     container_name: quick-start_ldes-client-cli
-    command: "--url http://localhost:8080/sample/by-time --input-format text/turtle"
+    command: "--url http://localhost:8080/sample/by-page --input-format text/turtle"
     profiles:
       - delayed-started
     network_mode: service:ldes-server
