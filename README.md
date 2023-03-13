@@ -1,13 +1,13 @@
 # Getting Started with [Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space)
 
->***Please Note !*** 
->> *The quick start tryout is ONLY made for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)
+>***Please Note!***
+>> *The quick start try-out is ONLY made for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)
 > for the self-generated data type:
 > [https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection](https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection).
-> To support other fragments, data types, or other features e.g. retention, caching, etc... Please consult [LDES Server Manual](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)  for the configurations.*
+> To support other fragments, data types, or other features e.g., retention, caching, etc., please consult [LDES Server Manual](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)  for the configurations.*
 
->> *[Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space) projects also provide methods for pre-processing data to LDES format.
-> e.g. from [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [NGSI-LD](https://en.wikipedia.org/wiki/NGSI-LD), from NGSI to [OSLO](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/oslo) Model, from  [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [LDES (LinkedDataEventStreams)](https://semiceu.github.io/LinkedDataEventStreams/) etc.. For more info, please consult: [VSDS Linked Data Interactions](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions)*
+>> *[Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space) projects also provide methods for transforming data to [LDES format](https://semiceu.github.io/LinkedDataEventStreams/),
+> e.g. from [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [NGSI-LD](https://en.wikipedia.org/wiki/NGSI-LD), from NGSI to [OSLO](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/oslo) Model, from [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [LDES (LinkedDataEventStreams)](https://semiceu.github.io/LinkedDataEventStreams/) etc. For more info, please consult: [VSDS Linked Data Interactions](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions)*
 
 
 ## Before Start
