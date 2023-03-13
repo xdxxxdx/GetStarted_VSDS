@@ -1,13 +1,3 @@
-
-## Table Of Contents
-
-- [Getting started with VSDS](#ldes-server)
-    * [Before Start](#before-start)
-    * [Start your LDES Server](#start-your-ldes-server)
-    * [Publish your first LDES collection](#publish-your-first-ldes-collection)       
-    * [Synchronize your LDES dataset using LDES Client](#synchronize-your-ldes-dataset-using-ldes-client)
-    * [Tear down the infrastructure and remove the volumes](#tear-down-the-infrastructure-and-remove-the-volumes)       
-
 # Getting Started with [Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space)
 
 >***Please Note!***
