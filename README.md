@@ -222,4 +222,4 @@ Within the working directory, please run `docker compose down -v`
 
 
 
-*The project locates at : [https://github.com/xdxxxdx/GetStarted_VSDS](GetStarted_VSDS), lives at: [https://xdxxxdx.github.io/GetStarted_VSDS/](https://xdxxxdx.github.io/GetStarted_VSDS/)*
+*The project locates at : [https://github.com/xdxxxdx/GetStarted_VSDS](https://github.com/xdxxxdx/GetStarted_VSDS), lives at: [https://xdxxxdx.github.io/GetStarted_VSDS/](https://xdxxxdx.github.io/GetStarted_VSDS/)*
