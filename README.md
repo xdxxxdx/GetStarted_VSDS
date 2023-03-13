@@ -1,6 +1,6 @@
 # Getting Started with [Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space)
 
->***Please Note!***
+>***🔥🔥Please Note!🔥🔥***
 >> *The quick start try-out is ONLY made for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)
 > for the self-generated data type:
 > [https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection](https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection).
