@@ -1,13 +1,13 @@
 # Getting Started with [Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space)
 
->***Please Note !*** 
->> *The quick start tryout is ONLY made for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)
+>***🔥🔥Please Note!🔥🔥***
+>> *The quick start try-out is ONLY made for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)
 > for the self-generated data type:
 > [https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection](https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection).
-> To support other fragments, data types, or other features e.g. retention, caching, etc... Please consult [LDES Server Manual](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)  for the configurations.*
+> To support other fragments, data types, or other features e.g., retention, caching, etc., please consult [LDES Server Manual](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)  for the configurations.*
 
->> *[Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space) projects also provide methods for pre-processing data to LDES format.
-> e.g. From [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [NGSI-LD](https://en.wikipedia.org/wiki/NGSI-LD), from NGSI to [OSLO](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/oslo) Model, from  [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [LDES (LinkedDataEventStreams)](https://semiceu.github.io/LinkedDataEventStreams/) etc.. For more info, please consult: [VSDS Linked Data Interactions](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions)*
+>> *[Vlaamse Smart Data Space](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space) projects also provide methods for transforming data to [LDES format](https://semiceu.github.io/LinkedDataEventStreams/),
+> e.g. from [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [NGSI-LD](https://en.wikipedia.org/wiki/NGSI-LD), from NGSI to [OSLO](https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/oslo) Model, from [NGSI-V2](https://vloca-kennishub.vlaanderen.be/NGSI-v2) to [LDES (LinkedDataEventStreams)](https://semiceu.github.io/LinkedDataEventStreams/) etc. For more info, please consult: [VSDS Linked Data Interactions](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions)*
 
 
 ## Before Start
@@ -19,7 +19,10 @@
 
 ## Start your [**LDES Server**](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) 
 
- 1.  Create a local [docker-compose.yml](https://stackedit.io/docker-compose.yml) file with the following content:
+ 1.  Create a local [docker-compose.yml](https://stackedit.io/docker-compose.yml) file with the following content or you could use the current good-to-go [GetStarted_VSDS
+Github project](https://github.com/xdxxxdx/GetStarted_VSDS):
+ 
+ 
 ```
 version: '3.3'
 services:
@@ -65,9 +68,9 @@ networks:
     name: quick_start_network
 
 ```
- 2. Under the same path of  [docker-compose.yml](./docker-compose.yml), please run ```docker compose up``` to start the [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) and [MongoDB](https://www.mongodb.com) containers.
+ 2. Within the working directory of [docker-compose.yml](./docker-compose.yml), please run ```docker compose up``` to start the [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) and [MongoDB](https://www.mongodb.com) containers.
 
- 3. **Now!** LDES Server is running at port 8080 right and ready for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination) for your data. Please. use your preferred browser to reach [http://localhost:8080/sample](http://localhost:8080/sample) to have a look.
+ 3. **Now!** [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) is running at port 8080 and ready for making [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination) for your data. Please. use your preferred browser to reach [http://localhost:8080/sample](http://localhost:8080/sample) to have a look.
  
 *The result should be as follow:* 
 ```
@@ -85,9 +88,61 @@ sample:by-page  rdf:type  tree:Node .
 
 ## Publish your first [LDES collection](https://semiceu.github.io/LinkedDataEventStreams/)
 
- 1. Please run ```curl -X POST http://localhost:8080/sample -H "Content-Type: application/ttl" -d '@sample.ttl```
+ 1. Create your own ```sample.ttl``` file with the following content, or you could use the current good-to-go [GetStarted_VSDS
+Github project](https://github.com/xdxxxdx/GetStarted_VSDS):
  
- 2. **Now!** LDES Server has [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)  -ed your first [LDES](https://semiceu.github.io/LinkedDataEventStreams/) data [sample.ttl](./sample.ttl). Please use your preferred browser to reach [http://localhost:8080/sample](http://localhost:8080/sample) to have a look.
+ ```
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ns0: <http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeatureCollection.> .
+@prefix ns1: <http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.> .
+@prefix ns2: <http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.> .
+@prefix ns3: <https://schema.org/> .
+
+<urn:ngsi-ld:WaterQualityObserved:woq:1/2023-03-12T18:31:17.003Z>
+  dc:isVersionOf <urn:ngsi-ld:WaterQualityObserved:woq:1> ;
+  prov:generatedAtTime "2023-03-12T18:31:17.003Z"^^xsd:dateTime ;
+  sosa:hasFeatureOfInterest "spt-00035-79" ;
+  ns0:member <https://data.vmm.be/id/loc-00019-33>, [
+    sosa:madeBySensor <urn:ngsi-v2:cot-imec-be:Device:imec-iow-UR5gEycRuaafxnhvjd9jnU> ;
+    ns1:result [ ns2:value [
+        ns3:value 2.043000e+1 ;
+        ns3:unitCode <https://data.vmm.be/id/CEL>
+      ] ] ;
+    ns1:phenomenonTime "2023-03-12T18:31:17.003Z"^^xsd:datetime ;
+    ns1:observedProperty <https://data.vmm.be/concept/waterkwaliteitparameter/temperatuur> ;
+    ns1:featureOfInterest <https://data.vmm.be/id/spt-00035-79> ;
+    a <http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement>
+  ], [
+    sosa:madeBySensor <urn:ngsi-v2:cot-imec-be:Device:imec-iow-UR5gEycRuaafxnhvjd9jnU> ;
+    ns1:result [ ns2:value [
+        ns3:value 1442 ;
+        ns3:unitCode <https://data.vmm.be/id/HP>
+      ] ] ;
+    ns1:phenomenonTime "2023-03-12T18:31:17.003Z"^^xsd:datetime ;
+    ns1:observedProperty <https://data.vmm.be/concept/observatieparameter/hydrostatische-druk> ;
+    ns1:featureOfInterest <https://data.vmm.be/id/spt-00035-79> ;
+    a <http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement>
+  ], [
+    sosa:madeBySensor <urn:ngsi-v2:cot-imec-be:Device:imec-iow-UR5gEycRuaafxnhvjd9jnU> ;
+    ns1:result [ ns2:value [
+        ns3:value 6150 ;
+        ns3:unitCode <https://data.vmm.be/id/G42>
+      ] ] ;
+    ns1:phenomenonTime "2023-03-12T18:31:17.003Z"^^xsd:datetime ;
+    ns1:observedProperty <https://data.vmm.be/concept/waterkwaliteitparameter/conductiviteit> ;
+    ns1:featureOfInterest <https://data.vmm.be/id/spt-00035-79> ;
+    a <http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement>
+  ] ;
+  a <https://www.w3.org/TR/vocab-ssn-ext/#sosa:ObservationCollection> .
+
+<https://data.vmm.be/id/loc-00019-33> a <http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature> 
+```
+ 2. Please run ```curl -X POST http://localhost:8080/sample -H "Content-Type: application/ttl" -d '@sample.ttl``` to post the  ```sample.ttl ```to the [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)
+ 
+ 3. **Now!** [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) has [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)  -ed your first [LDES](https://semiceu.github.io/LinkedDataEventStreams/) data [sample.ttl](./sample.ttl). Please use your preferred browser to reach [http://localhost:8080/sample](http://localhost:8080/sample) to have a look.
  
 *The result should be as follow:* 
 ```
@@ -161,4 +216,10 @@ Follow the `tree:node`  [http://localhost:8080/sample/by-page?pageNumber=1](http
  ```    
 
 ## Tear down the infrastructure and remove the volumes
-From within the working directory, please run `docker compose down -v`
+Within the working directory, please run `docker compose down -v`
+
+
+
+
+
+*The project locates at : [https://github.com/xdxxxdx/GetStarted_VSDS](https://github.com/xdxxxdx/GetStarted_VSDS), lives at: [https://xdxxxdx.github.io/GetStarted_VSDS/](https://xdxxxdx.github.io/GetStarted_VSDS/)*
