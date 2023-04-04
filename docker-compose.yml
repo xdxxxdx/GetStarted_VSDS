@@ -1,4 +1,4 @@
-version: '3.3'
+version: ‘3.3'
 services:
   ldes-server:
     container_name: quick-start_ldes-server
