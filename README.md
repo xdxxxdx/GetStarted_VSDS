@@ -140,7 +140,7 @@ Github project](https://github.com/xdxxxdx/GetStarted_VSDS):
 
 <https://data.vmm.be/id/loc-00019-33> a <http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature> 
 ```
- 2. Please run ```curl -X POST http://localhost:8080/sample -H "Content-Type: application/ttl" -d '@sample.ttl``` to post the  ```sample.ttl ```to the [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)
+ 2. Please run ```curl -X POST http://localhost:8080/sample -H "Content-Type: application/ttl" -d '@sample.ttl'``` to post the  ```sample.ttl ```to the [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)
  
  3. **Now!** [LDES Server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) has [Pagination fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-pagination)  -ed your first [LDES](https://semiceu.github.io/LinkedDataEventStreams/) data [sample.ttl](./sample.ttl). Please use your preferred browser to reach [http://localhost:8080/sample](http://localhost:8080/sample) to have a look.
  
