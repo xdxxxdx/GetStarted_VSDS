@@ -28,7 +28,7 @@ version: '3.3'
 services:
   ldes-server:
     container_name: quick-start_ldes-server
-    image: ghcr.io/informatievlaanderen/ldes-server:latest
+    image: ghcr.io/informatievlaanderen/ldes-server:20230314T0913
     environment:
       - SIS_DATA=/tmp
       - SPRING_DATA_MONGODB_DATABASE=sample
