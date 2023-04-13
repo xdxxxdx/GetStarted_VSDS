@@ -30,12 +30,20 @@ services:
       - 27017:27017
     networks:
       - ldes
+  # ldes-cli:
+  #   image: ghcr.io/informatievlaanderen/ldes-cli:20230222T0959
+  #   container_name: quick-start_ldes-client-cli
+  #   command: "--url http://localhost:8080/sample/by-page --input-format text/turtle"
+  #   profiles:
+  #     - delayed-started
+  #   network_mode: service:ldes-server
   ldes-cli:
-    image: ghcr.io/informatievlaanderen/ldes-cli:20230222T0959
-    container_name: quick-start_ldes-client-cli
-    command: "--url http://localhost:8080/sample/by-page --input-format text/turtle"
+    image: ghcr.io/informatievlaanderen/ldi-orchestrator:${LDI_ORCHESTRATOR_TAG:-20230407T130529}
+    container_name: ${USECASE_NAME:-simulator-cli}_ldio-workflow
+    volumes:
+      - ./ldio-workflow.config.yml:/application.yml:ro
     profiles:
-      - delayed-started
+      - delay-started
     network_mode: service:ldes-server
 networks:
   ldes:
